@@ -34,7 +34,7 @@ app.post('/books', (req,res) => {
     author = author.trim()
     year = parseInt(year)
 
-    if(typeof year === "string") {
+    if(Number.isNaN(year)) {
         return res.status(400).send('El año debe ser un número')
     }
 
